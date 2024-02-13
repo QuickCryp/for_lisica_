@@ -1,0 +1,6 @@
+# no need files
+.idea/
+
+# pycache
+books/books/__pycache__/
+books/general/__pycache__/

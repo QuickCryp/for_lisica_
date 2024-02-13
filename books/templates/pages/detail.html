@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="my-5">
+    <div class="p-5 text-center bg-body-tertiary">
+      <div class="container py-5">
+        <h1 class="text-body-emphasis">{{ book.name }}</h1>
+        <h4 class="text-body-emphasis">Genre - {{ book.genre }}</h4>
+        <p class="col-lg-8 mx-auto lead">
+          Description <br> {{ book.description }}
+        </p>
+        <small>Book Author is "{{ book.author }}"</small>
+      </div>
+      <a href="{% url 'home:delete' book.id %}"><button class="btn btn-danger">Delete</button></a>
+    </div>
+  </div>
+{% endblock content %}

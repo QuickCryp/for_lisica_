@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <form method="get">
+        {{ filter_form.as_p }}
+        <button type="submit">Применить фильтр</button>
+    </form>
+
+    {% for book in books %}
+        <div class="">
+            <h3>Name: {{ book.name }}</h3>
+            <small>Author: {{ book.author }}</small><br>
+            <a href="{% url 'home:detail_book' book.id %}"><button class="btn btn-success">Read</button></a>
+        </div>
+    {% empty %}
+        <h1>Книжек ещё не завезли</h1>
+    {% endfor %}
+{% endblock content %}
